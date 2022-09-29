@@ -1,0 +1,19 @@
+package com.project.daos;
+
+import java.util.List;
+
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.project.entities.CarCategory;
+
+public interface CarCategoryDao extends JpaRepository<CarCategory, Integer>{
+	List<CarCategory> findBycarTypeId(int id);
+	
+	List<CarCategory> findCarById(int id);
+	
+	//@Query("FROM Booking ORDER BY status DESC")
+	List<CarCategory> findAll();
+
+}
